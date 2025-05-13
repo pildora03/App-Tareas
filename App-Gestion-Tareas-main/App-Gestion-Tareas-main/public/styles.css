@@ -1,0 +1,202 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fuentes y cuerpo */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #FFEDE1; /* nuevo fondo */
+  padding: 0;
+}
+
+/* Navegación */
+nav {
+  background-color: #0E1C36; /* azul oscuro */
+  padding: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #AFCBFF;
+  color: #0E1C36;
+  border-bottom: 3px solid #0E1C36;
+}
+
+/* Kanban layout */
+.kanban {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.kanban-column {
+  background-color: #F9FBF2;
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+  min-height: 300px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.kanban-column h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #0E1C36;
+}
+
+/* Post-it (tarea) */
+.tarea {
+  background-color: #D7F9FF;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 5px solid #AFCBFF;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.tarea:hover {
+  transform: scale(1.02);
+}
+
+.tarea h3 {
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.tarea p {
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Gráfico tipo GitHub */
+#resumen-contribuciones {
+  padding: 30px;
+  text-align: center;
+  background-color: #FFFFFF;
+  margin: 40px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#grafico-contribuciones {
+  display: grid;
+  grid-template-columns: repeat(30, 12px);
+  grid-auto-rows: 12px;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.celda-dia {
+  width: 12px;
+  height: 12px;
+  background-color: #ebedf0;
+  border-radius: 2px;
+}
+
+.celda-dia[data-nivel="1"] {
+  background-color: #C2D8DD; /* gris claro azulado */
+}
+.celda-dia[data-nivel="2"] {
+  background-color: #8FBAC2; /* tono medio */
+}
+.celda-dia[data-nivel="3"] {
+  background-color: #5D99A8; /* más oscuro */
+}
+.celda-dia[data-nivel="4"] {
+  background-color: #2E6B7B; /* más profundo */
+}
+
+#formulario-tarea {
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+#formulario-tarea h2 {
+  margin-bottom: 15px;
+  color: #0E1C36;
+  text-align: center;
+}
+
+#formulario-tarea form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#formulario-tarea input,
+#formulario-tarea textarea,
+#formulario-tarea button {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#formulario-tarea button {
+  background-color: #AFCBFF;
+  color: #0E1C36;
+  cursor: pointer;
+  border: none;
+}
+
+#formulario-tarea button:hover {
+  background-color: #0E1C36;
+  color: #FFFFFF;
+}
+
+.commit-grid {
+  display: grid;
+  grid-template-columns: repeat(53, 14px);
+  grid-template-rows: repeat(7, 14px);
+  gap: 3px;
+  margin-top: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.commit-cell {
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+}
+
+.commit-0 { background-color: #9799a9; }
+.commit-1 { background-color: #608790; }
+.commit-2 { background-color: #8FBAC2; }
+.commit-3 { background-color: #5D99A8; }
+.commit-4 { background-color: #2E6B7B; }
